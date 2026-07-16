@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fredoka:wght@500;600;700&display=swap");
+
+
+#scratch-card-screen {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 211, 232, 0.86),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(226, 216, 255, 0.85),
+            transparent 31%
+        ),
+        radial-gradient(
+            circle at 78% 88%,
+            rgba(208, 255, 237, 0.78),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff5fa,
+            #fffbed
+        );
+}
+
+
+.scratch-wrapper {
+    width: min(760px, 94vw);
+
+    margin: 0 auto;
+
+    position: relative;
+}
+
+
+.scratch-card-panel {
+    position: relative;
+    z-index: 2;
+
+    padding: clamp(22px, 4vw, 38px);
+
+    border: 5px solid #ff74aa;
+    border-radius: 34px;
+
+    background: #fffdfb;
+
+    box-shadow:
+        0 24px 58px
+        rgba(205, 74, 137, 0.18);
+
+    text-align: center;
+}
+
+
+.scratch-small-heading {
+    width: fit-content;
+
+    margin: 0 auto 12px;
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    color: #834262;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0a8,
+            #ffd768
+        );
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+.scratch-card-panel h2 {
+    margin: 0;
+
+    color: #78275d;
+
+    font-family: "Baloo 2", cursive;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1;
+
+    text-shadow:
+        3px 3px 0 #ffe2ee;
+}
+
+
+.scratch-intro-text {
+    max-width: 590px;
+
+    margin: 16px auto 20px;
+
+    color: #6d4960;
+
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+
+.scratch-stage {
+    width: min(430px, 82vw);
+
+    aspect-ratio: 3 / 4;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 6px solid #ffffff;
+    border-radius: 26px;
+
+    background: #ffd8e8;
+
+    box-shadow:
+        0 15px 35px
+        rgba(170, 60, 115, 0.24);
+}
+
+
+.scratch-memory-image,
+#scratch-canvas {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    inset: 0;
+
+    display: block;
+}
+
+
+.scratch-memory-image {
+    object-fit: contain;
+
+    background: #fff5fa;
+}
+
+
+#scratch-canvas {
+    z-index: 3;
+
+    cursor: crosshair;
+
+    touch-action: none;
+}
+
+
+.scratch-progress-text {
+    margin: 14px 0 0;
+
+    color: #87526e;
+
+    font-family: "Fredoka", sans-serif;
+    font-weight: 700;
+}
+
+
+.scratch-reveal-message {
+    max-width: 560px;
+
+    margin: 20px auto 0;
+    padding: 18px;
+
+    border: 3px dashed #e8a3c2;
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe7f1,
+            #fff4c9
+        );
+}
+
+
+.scratch-reveal-message h3 {
+    margin: 0 0 8px;
+
+    color: #762a59;
+
+    font-family: "Baloo 2", cursive;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+
+.scratch-reveal-message p {
+    margin: 0;
+
+    color: #70455c;
+
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+.scratch-main-button,
+.scratch-secondary-button {
+    display: block;
+
+    width: min(100%, 410px);
+
+    margin: 12px auto 0;
+    padding: 14px 22px;
+
+    border: none;
+    border-radius: 999px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.scratch-main-button {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff77ad,
+            #ff438e
+        );
+
+    box-shadow:
+        0 10px 24px
+        rgba(255, 67, 142, 0.27);
+}
+
+
+.scratch-secondary-button {
+    color: #704060;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9deff,
+            #d4c6ff
+        );
+}
+
+
+.scratch-main-button:hover,
+.scratch-secondary-button:hover {
+    transform: translateY(-2px);
+}
+
+
+.scratch-doodle {
+    position: absolute;
+    z-index: 1;
+
+    pointer-events: none;
+
+    font-size: 1.8rem;
+
+    animation:
+        scratchFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+.scratch-doodle-1 {
+    top: -20px;
+    left: -30px;
+}
+
+
+.scratch-doodle-2 {
+    top: 20px;
+    right: -35px;
+
+    animation-delay: 0.5s;
+}
+
+
+.scratch-doodle-3 {
+    bottom: 30px;
+    left: -34px;
+
+    animation-delay: 1s;
+}
+
+
+.scratch-doodle-4 {
+    right: 30px;
+    bottom: -20px;
+
+    animation-delay: 1.5s;
+}
+
+
+@keyframes scratchFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-4deg);
+    }
+
+    50% {
+        transform:
+            translateY(-7px)
+            rotate(5deg);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .scratch-card-panel {
+        padding: 24px 16px;
+    }
+
+    .scratch-doodle {
+        opacity: 0.5;
+    }
+
+}

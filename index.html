@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Three Years of Us</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/album.css">
+    <link rel="stylesheet" href="css/boyfriend-test.css">
+    <link rel="stylesheet" href="css/catch-my-heart.css">
+    <link rel="stylesheet" href="css/scratch-card.css">
+    <link rel="stylesheet" href="css/reward-wheel.css">
+    <link rel="stylesheet" href="css/escape-room.css">
+    <link rel="stylesheet" href="css/final-surprise.css">
+</head>
+
+<body>
+
+    <!-- ================================================== -->
+    <!-- PASSWORD SCREEN                                    -->
+    <!-- ================================================== -->
+
+    <section
+        id="password-screen"
+        class="screen"
+    >
+        <div class="main-card">
+
+            <p class="small-heading">
+                A private little universe
+            </p>
+
+            <h1>
+                Three years of us
+            </h1>
+
+            <p class="main-text">
+                Enter our secret date to begin.
+            </p>
+
+            <p class="instruction-text">
+                Write the date using six numbers:
+                <strong>day, month, year</strong>.
+            </p>
+
+            <p class="instruction-text">
+                You have a total of
+                <strong>10 hints</strong>.
+                One new hint appears after every wrong attempt.
+            </p>
+
+            <form id="password-form">
+
+                <input
+                    type="password"
+                    id="password-input"
+                    placeholder="Enter the six-digit date"
+                    inputmode="numeric"
+                    maxlength="6"
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    Unlock our story
+                </button>
+
+            </form>
+
+            <p id="password-message"></p>
+
+            <div id="date-check"></div>
+
+            <div
+                id="hint-box"
+                class="hidden"
+            >
+                <p class="small-heading">
+                    Your current hint
+                </p>
+
+                <div id="hint-list"></div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- WELCOME SCREEN                                     -->
+    <!-- ================================================== -->
+
+    <section
+        id="welcome-screen"
+        class="screen hidden"
+    >
+        <div class="main-card">
+
+            <p class="small-heading">
+                Identity confirmed
+            </p>
+
+            <h1>
+                Welcome,
+                <br>
+                my love 💗
+            </h1>
+
+            <p class="main-text">
+                You unlocked our little anniversary universe.
+            </p>
+
+            <p class="instruction-text">
+                Your anniversary adventure begins here.
+            </p>
+
+            <button
+                type="button"
+                id="welcome-next-button"
+            >
+                Begin our adventure →
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- RULES SCREEN                                       -->
+    <!-- ================================================== -->
+
+    <section
+        id="rules-screen"
+        class="screen hidden"
+    >
+        <div class="main-card rules-card">
+
+            <p class="small-heading">
+                Mission briefing
+            </p>
+
+            <h2>
+                Before you begin…
+            </h2>
+
+            <div class="rules-list">
+
+                <div class="rule">
+                    <span>01</span>
+
+                    <p>
+                        Complete three key missions to unlock the final surprise.
+                    </p>
+                </div>
+
+                <div class="rule">
+                    <span>02</span>
+
+                    <p>
+                        No cheating. Girlfriend surveillance is active.
+                    </p>
+                </div>
+
+                <div class="rule">
+                    <span>03</span>
+
+                    <p>
+                        Bonus activities can be explored along the journey.
+                    </p>
+                </div>
+
+                <div class="rule">
+                    <span>04</span>
+
+                    <p>
+                        Search carefully. Important clues may be hiding anywhere.
+                    </p>
+                </div>
+
+                <div class="rule">
+                    <span>05</span>
+
+                    <p>
+                        Have fun and remember that I love you.
+                    </p>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                id="accept-rules-button"
+            >
+                I accept the rules →
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- MAIN MENU                                          -->
+    <!-- ================================================== -->
+
+    <section
+        id="menu-screen"
+        class="screen hidden"
+    >
+        <div class="main-card menu-card">
+
+            <p class="small-heading">
+                Anniversary adventure
+            </p>
+
+            <h2>
+                Our little universe
+            </h2>
+
+            <p class="main-text">
+                Choose your next adventure 💗
+            </p>
+
+            <div class="level-buttons">
+
+                <button
+                    type="button"
+                    id="album-button"
+                >
+                    📖 Open Our Digital Album
+                </button>
+
+                <button
+                    type="button"
+                    id="boyfriend-test-button"
+                    class="boyfriend-test-menu-button"
+                >
+                    💘 Level 1: The Boyfriend Test
+                </button>
+
+                <button
+                    type="button"
+                    id="catch-heart-button"
+                    class="catch-heart-menu-button"
+                >
+                    🧺 Level 2: Catch My Heart
+                </button>
+
+                <button
+                    type="button"
+                    id="scratch-card-menu-button"
+                    class="scratch-card-menu-button"
+                >
+                    💌 Special Scratch Card
+                </button>
+
+                <button
+                    type="button"
+                    id="reward-wheel-menu-button"
+                    class="reward-wheel-menu-button"
+                >
+                    🎡 The Reward Wheel
+                </button>
+
+                <button
+                    type="button"
+                    id="level-3-button"
+                    class="level-3-menu-button"
+                >
+                    🗝️ Level 3: The Memory Escape Room
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- DIGITAL ALBUM                                      -->
+    <!-- ================================================== -->
+
+    <section
+        id="album-screen"
+        class="screen hidden"
+    >
+        <div class="album-wrapper">
+
+            <div class="album-header">
+
+                <p class="small-heading">
+                    Our little three-year life
+                </p>
+
+                <h2>
+                    Digital album
+                </h2>
+
+                <p id="album-progress">
+                    Spread 1
+                </p>
+
+            </div>
+
+            <div
+                class="book"
+                id="album-book"
+            >
+                <div class="album-doodle doodle-1">🌸</div>
+                <div class="album-doodle doodle-2">💖</div>
+                <div class="album-doodle doodle-3">✨</div>
+                <div class="album-doodle doodle-4">🧸</div>
+                <div class="album-doodle doodle-5">🌷</div>
+                <div class="album-doodle doodle-6">💌</div>
+                <div class="album-doodle doodle-7">⭐</div>
+                <div class="album-doodle doodle-8">🩷</div>
+
+                <div class="book-page left-page">
+
+                    <div id="left-page-content"></div>
+
+                    <span
+                        id="left-page-number"
+                        class="page-number"
+                    ></span>
+
+                </div>
+
+                <div class="book-spine"></div>
+
+                <div class="book-page right-page">
+
+                    <div id="right-page-content"></div>
+
+                    <span
+                        id="right-page-number"
+                        class="page-number"
+                    ></span>
+
+                </div>
+
+            </div>
+
+            <div class="album-controls">
+
+                <button
+                    type="button"
+                    id="previous-spread-button"
+                >
+                    ← Previous
+                </button>
+
+                <button
+                    type="button"
+                    id="album-menu-button"
+                >
+                    Back to menu
+                </button>
+
+                <button
+                    type="button"
+                    id="next-spread-button"
+                >
+                    Next →
+                </button>
+
+                <button
+                    type="button"
+                    id="album-next-adventure-button"
+                    class="hidden"
+                >
+                    Continue to Level 1 💘
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- LEVEL 1: BOYFRIEND TEST                            -->
+    <!-- ================================================== -->
+
+    <section
+        id="boyfriend-test-screen"
+        class="screen hidden"
+    >
+        <div class="quiz-wrapper">
+
+            <div class="quiz-doodle quiz-doodle-1">💗</div>
+            <div class="quiz-doodle quiz-doodle-2">✨</div>
+            <div class="quiz-doodle quiz-doodle-3">🌸</div>
+            <div class="quiz-doodle quiz-doodle-4">💌</div>
+            <div class="quiz-doodle quiz-doodle-5">🧸</div>
+            <div class="quiz-doodle quiz-doodle-6">🎀</div>
+
+            <div
+                id="quiz-intro"
+                class="quiz-card"
+            >
+                <p class="quiz-small-heading">
+                    Level 1 • Key mission 🔐
+                </p>
+
+                <h2>
+                    The Boyfriend Test
+                </h2>
+
+                <p class="quiz-intro-text">
+                    Let us see how well you remember the tiny details
+                    of our story 😌💗
+                </p>
+
+                <div class="quiz-rule-box">
+
+                    <p>
+                        ❤️ You begin with three full lives.
+                    </p>
+
+                    <p>
+                        💔 Each wrong answer removes half a heart.
+                    </p>
+
+                    <p>
+                        🔄 You may retry each question once.
+                    </p>
+
+                    <p>
+                        🌷 After two wrong attempts, the answer will be revealed.
+                    </p>
+
+                    <p>
+                        🔑 You will receive the key at the end either way.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="start-boyfriend-test-button"
+                    class="quiz-main-button"
+                >
+                    Start the test 💘
+                </button>
+
+                <button
+                    type="button"
+                    id="quiz-intro-menu-button"
+                    class="quiz-secondary-button"
+                >
+                    ← Back to menu
+                </button>
+
+            </div>
+
+            <div
+                id="quiz-question-card"
+                class="quiz-card hidden"
+            >
+                <div class="quiz-top-bar">
+
+                    <div>
+                        <p class="quiz-progress-label">
+                            Question
+                        </p>
+
+                        <p id="quiz-question-progress">
+                            1 of 12
+                        </p>
+                    </div>
+
+                    <div class="lives-area">
+
+                        <p class="quiz-progress-label">
+                            Lives
+                        </p>
+
+                        <div
+                            id="quiz-lives"
+                            class="quiz-lives"
+                        >
+                            ❤️ ❤️ ❤️
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="quiz-progress-track">
+
+                    <div
+                        id="quiz-progress-fill"
+                        class="quiz-progress-fill"
+                    ></div>
+
+                </div>
+
+                <div class="question-area">
+
+                    <p id="quiz-question-number">
+                        Question 1
+                    </p>
+
+                    <h3 id="quiz-question-text">
+                        Question appears here
+                    </h3>
+
+                    <div
+                        id="quiz-options"
+                        class="quiz-options"
+                    ></div>
+
+                </div>
+
+                <div
+                    id="quiz-feedback"
+                    class="quiz-feedback hidden"
+                ></div>
+
+            </div>
+
+            <div
+                id="quiz-finish"
+                class="quiz-card quiz-finish-card hidden"
+            >
+                <div class="key-glow">
+                    🔑
+                </div>
+
+                <p class="quiz-small-heading">
+                    Mission completed
+                </p>
+
+                <h2 id="quiz-finish-title">
+                    Key unlocked!
+                </h2>
+
+                <p
+                    id="quiz-finish-message"
+                    class="quiz-intro-text"
+                ></p>
+
+                <div class="key-reward">
+
+                    <span class="key-icon">
+                        🔑
+                    </span>
+
+                    <div>
+
+                        <p>
+                            You received
+                        </p>
+
+                        <strong>
+                            Relationship Key No. 1
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="quiz-next-level-button"
+                    class="quiz-main-button"
+                >
+                    Continue to Level 2 🧺
+                </button>
+
+                <button
+                    type="button"
+                    id="quiz-finish-menu-button"
+                    class="quiz-secondary-button"
+                >
+                    Back to menu
+                </button>
+
+                <button
+                    type="button"
+                    id="replay-quiz-button"
+                    class="quiz-secondary-button"
+                >
+                    Play again
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- LEVEL 2: CATCH MY HEART                            -->
+    <!-- ================================================== -->
+
+    <section
+        id="catch-heart-screen"
+        class="screen hidden"
+    >
+        <div class="heart-game-wrapper">
+
+            <div class="heart-game-doodle heart-doodle-1">💗</div>
+            <div class="heart-game-doodle heart-doodle-2">🌈</div>
+            <div class="heart-game-doodle heart-doodle-3">✨</div>
+            <div class="heart-game-doodle heart-doodle-4">🌸</div>
+            <div class="heart-game-doodle heart-doodle-5">🎀</div>
+            <div class="heart-game-doodle heart-doodle-6">💌</div>
+
+            <div
+                id="heart-game-intro"
+                class="heart-game-card"
+            >
+                <p class="heart-game-small-heading">
+                    Level 2 • Key mission 🔐
+                </p>
+
+                <h2>
+                    Catch My Heart
+                </h2>
+
+                <p class="heart-game-intro-text">
+                    Move the basket using your mouse and catch as much love
+                    as possible before time runs out 💗
+                </p>
+
+                <div class="heart-game-rules">
+
+                    <div class="heart-rule">
+                        <span>❤️</span>
+
+                        <p>
+                            Catch colourful hearts to gain one point.
+                        </p>
+                    </div>
+
+                    <div class="heart-rule">
+                        <span>😡</span>
+
+                        <p>
+                            Avoid angry faces, rain clouds, spiders and bombs.
+                        </p>
+                    </div>
+
+                    <div class="heart-rule">
+                        <span>⏱️</span>
+
+                        <p>
+                            Catch at least 25 hearts in 30 seconds.
+                        </p>
+                    </div>
+
+                    <div class="heart-rule">
+                        <span>🔑</span>
+
+                        <p>
+                            Reach the target to unlock Relationship Key No. 2.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="falling-preview">
+
+                    <span>❤️</span>
+                    <span>🩷</span>
+                    <span>🧡</span>
+                    <span>💛</span>
+                    <span>💚</span>
+                    <span>🩵</span>
+                    <span>💙</span>
+                    <span>💜</span>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="start-heart-game-button"
+                    class="heart-game-main-button"
+                >
+                    Start catching love 🧺
+                </button>
+
+                <button
+                    type="button"
+                    id="heart-intro-menu-button"
+                    class="heart-game-secondary-button"
+                >
+                    ← Back to menu
+                </button>
+
+            </div>
+
+            <div
+                id="heart-game-card"
+                class="heart-game-card hidden"
+            >
+                <div class="heart-game-top-bar">
+
+                    <div class="heart-stat-box">
+
+                        <p>
+                            Hearts caught
+                        </p>
+
+                        <strong id="heart-game-score">
+                            0 / 25
+                        </strong>
+
+                    </div>
+
+                    <div class="heart-stat-box">
+
+                        <p>
+                            Time left
+                        </p>
+
+                        <strong id="heart-game-time">
+                            30s
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="heart-game-progress-track">
+
+                    <div
+                        id="heart-game-progress-fill"
+                        class="heart-game-progress-fill"
+                    ></div>
+
+                </div>
+
+                <div
+                    id="heart-game-message"
+                    class="heart-game-message"
+                >
+                    Move your mouse anywhere to control the basket 💗
+                </div>
+
+                <div
+                    id="heart-play-area"
+                    class="heart-play-area"
+                >
+                    <div class="game-cloud cloud-one">☁️</div>
+                    <div class="game-cloud cloud-two">☁️</div>
+                    <div class="game-cloud cloud-three">☁️</div>
+
+                    <div
+                        id="heart-basket"
+                        class="heart-basket"
+                    >
+                        <span class="basket-bow">
+                            🎀
+                        </span>
+
+                        <span class="basket-emoji">
+                            🧺
+                        </span>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="leave-heart-game-button"
+                    class="heart-game-secondary-button"
+                >
+                    Leave game
+                </button>
+
+            </div>
+
+            <div
+                id="heart-game-retry"
+                class="heart-game-card heart-result-card hidden"
+            >
+                <div class="heart-result-icon">
+                    🥹
+                </div>
+
+                <p class="heart-game-small-heading">
+                    The hearts were speedy
+                </p>
+
+                <h2>
+                    Almost there!
+                </h2>
+
+                <p
+                    id="heart-retry-message"
+                    class="heart-game-intro-text"
+                >
+                    The hearts were being dramatic today.
+                    Let us catch them again 💗
+                </p>
+
+                <button
+                    type="button"
+                    id="retry-heart-game-button"
+                    class="heart-game-main-button"
+                >
+                    Try again 🧺
+                </button>
+
+                <button
+                    type="button"
+                    id="heart-retry-menu-button"
+                    class="heart-game-secondary-button"
+                >
+                    ← Back to menu
+                </button>
+
+            </div>
+
+            <div
+                id="heart-game-win"
+                class="heart-game-card heart-result-card hidden"
+            >
+                <div class="heart-key-glow">
+                    🔑
+                </div>
+
+                <p class="heart-game-small-heading">
+                    Mission completed
+                </p>
+
+                <h2>
+                    You caught my heart!
+                </h2>
+
+                <p
+                    id="heart-win-message"
+                    class="heart-game-intro-text"
+                >
+                    You caught enough love to fill my entire heart 💗
+                </p>
+
+                <div class="heart-key-reward">
+
+                    <span>
+                        🔑
+                    </span>
+
+                    <div>
+
+                        <p>
+                            You received
+                        </p>
+
+                        <strong>
+                            Relationship Key No. 2
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="heart-open-scratch-button"
+                    class="heart-game-main-button"
+                >
+                    Open a special memory 💌
+                </button>
+
+                <button
+                    type="button"
+                    id="heart-win-menu-button"
+                    class="heart-game-secondary-button"
+                >
+                    Back to menu
+                </button>
+
+                <button
+                    type="button"
+                    id="replay-heart-game-button"
+                    class="heart-game-secondary-button"
+                >
+                    Play again
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- SCRATCH CARD                                       -->
+    <!-- ================================================== -->
+
+    <section
+        id="scratch-card-screen"
+        class="screen hidden"
+    >
+        <div class="scratch-wrapper">
+
+            <div class="scratch-doodle scratch-doodle-1">💗</div>
+            <div class="scratch-doodle scratch-doodle-2">✨</div>
+            <div class="scratch-doodle scratch-doodle-3">🌸</div>
+            <div class="scratch-doodle scratch-doodle-4">🎀</div>
+
+            <div class="scratch-card-panel">
+
+                <p class="scratch-small-heading">
+                    A special memory 💌
+                </p>
+
+                <h2>
+                    Scratch to reveal
+                </h2>
+
+                <p class="scratch-intro-text">
+                    Slowly scratch away the cover to uncover
+                    one of my favourite memories of us 🥹💗
+                </p>
+
+                <div
+                    id="scratch-stage"
+                    class="scratch-stage"
+                >
+                    <img
+                        src="images/scratch_confession.jpeg"
+                        alt="The night I said it properly"
+                        class="scratch-memory-image"
+                    >
+
+                    <canvas
+                        id="scratch-canvas"
+                        aria-label="Scratch the card to reveal the memory"
+                    ></canvas>
+                </div>
+
+                <p
+                    id="scratch-progress-text"
+                    class="scratch-progress-text"
+                >
+                    Scratch the pink cover ✨
+                </p>
+
+                <div
+                    id="scratch-reveal-message"
+                    class="scratch-reveal-message hidden"
+                >
+                    <h3>
+                        The night I said it properly 🥹💗
+                    </h3>
+
+                    <p>
+                        This memory still gives me butterflies.
+                        I love how far we have come since this little conversation.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    id="scratch-next-button"
+                    class="scratch-main-button hidden"
+                >
+                    Continue to the Reward Wheel 🎡
+                </button>
+
+                <button
+                    type="button"
+                    id="scratch-menu-button"
+                    class="scratch-secondary-button"
+                >
+                    Back to menu
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- REWARD WHEEL                                       -->
+    <!-- ================================================== -->
+
+    <section
+        id="reward-wheel-screen"
+        class="screen hidden"
+    >
+        <div class="reward-wheel-wrapper">
+
+            <div class="wheel-doodle wheel-doodle-1">🌈</div>
+            <div class="wheel-doodle wheel-doodle-2">💗</div>
+            <div class="wheel-doodle wheel-doodle-3">✨</div>
+            <div class="wheel-doodle wheel-doodle-4">🎀</div>
+            <div class="wheel-doodle wheel-doodle-5">🍭</div>
+            <div class="wheel-doodle wheel-doodle-6">🌸</div>
+
+            <div
+                id="reward-wheel-intro"
+                class="reward-wheel-card"
+            >
+                <p class="reward-wheel-small-heading">
+                    Bonus surprise 🎡
+                </p>
+
+                <h2>
+                    The Reward Wheel
+                </h2>
+
+                <p class="reward-wheel-intro-text">
+                    You completed the special memory,
+                    so now you have earned one colourful reward 💗
+                </p>
+
+                <div class="reward-preview-grid">
+
+                    <div>🫂 <span>Long hug</span></div>
+                    <div>💋 <span>Five kisses</span></div>
+                    <div>🌆 <span>Choose a date</span></div>
+                    <div>🍫 <span>Snack treat</span></div>
+                    <div>🎬 <span>Movie night</span></div>
+                    <div>🎵 <span>Song dedication</span></div>
+                    <div>✨ <span>One wish</span></div>
+                    <div>🎁 <span>Surprise gift</span></div>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="open-reward-wheel-button"
+                    class="reward-wheel-main-button"
+                >
+                    Open the colourful wheel 🎡
+                </button>
+
+                <button
+                    type="button"
+                    id="reward-wheel-intro-menu-button"
+                    class="reward-wheel-secondary-button"
+                >
+                    Back to menu
+                </button>
+
+            </div>
+
+            <div
+                id="reward-wheel-game"
+                class="reward-wheel-card hidden"
+            >
+                <p class="reward-wheel-small-heading">
+                    Your reward awaits ✨
+                </p>
+
+                <h2>
+                    Spin the wheel!
+                </h2>
+
+                <p class="reward-wheel-intro-text">
+                    One official spin. No bribing the wheel,
+                    no shaking the laptop and no girlfriend negotiations 😌💗
+                </p>
+
+                <div class="wheel-area">
+
+                    <div class="wheel-pointer">
+                        ▼
+                    </div>
+
+                    <div
+                        id="colourful-reward-wheel"
+                        class="colourful-reward-wheel"
+                    >
+                        <div class="wheel-label label-1">
+                            <span>🫂</span>
+                            Long hug
+                        </div>
+
+                        <div class="wheel-label label-2">
+                            <span>💋</span>
+                            5 kisses
+                        </div>
+
+                        <div class="wheel-label label-3">
+                            <span>🌆</span>
+                            Pick date
+                        </div>
+
+                        <div class="wheel-label label-4">
+                            <span>🍫</span>
+                            Snack
+                        </div>
+
+                        <div class="wheel-label label-5">
+                            <span>🎬</span>
+                            Movie
+                        </div>
+
+                        <div class="wheel-label label-6">
+                            <span>🎵</span>
+                            Song
+                        </div>
+
+                        <div class="wheel-label label-7">
+                            <span>✨</span>
+                            One wish
+                        </div>
+
+                        <div class="wheel-label label-8">
+                            <span>🎁</span>
+                            Gift
+                        </div>
+
+                        <div class="wheel-centre">
+                            💖
+                        </div>
+                    </div>
+
+                </div>
+
+                <p
+                    id="wheel-status-message"
+                    class="wheel-status-message"
+                >
+                    The wheel is waiting for you 👀
+                </p>
+
+                <button
+                    type="button"
+                    id="spin-reward-wheel-button"
+                    class="reward-wheel-main-button spin-wheel-button"
+                >
+                    Spin my reward! 🎡
+                </button>
+
+                <button
+                    type="button"
+                    id="reward-wheel-game-menu-button"
+                    class="reward-wheel-secondary-button"
+                >
+                    Back to menu
+                </button>
+
+            </div>
+
+            <div
+                id="reward-wheel-result"
+                class="reward-wheel-card reward-result-card hidden"
+            >
+                <div class="reward-confetti">
+                    <span>🎉</span>
+                    <span>✨</span>
+                    <span>💗</span>
+                    <span>🌈</span>
+                    <span>🎊</span>
+                </div>
+
+                <p class="reward-wheel-small-heading">
+                    Official wheel decision
+                </p>
+
+                <h2>
+                    You won!
+                </h2>
+
+                <div
+                    id="reward-result-emoji"
+                    class="reward-result-emoji"
+                >
+                    🎁
+                </div>
+
+                <div class="reward-result-ticket">
+
+                    <p>
+                        Your anniversary reward is
+                    </p>
+
+                    <strong id="reward-result-title">
+                        Surprise reward
+                    </strong>
+
+                    <span id="reward-result-description">
+                        Your reward description will appear here.
+                    </span>
+
+                </div>
+
+                <p class="reward-result-note">
+                    Screenshot this page as official proof.
+                    This reward has been approved by your girlfriend 💗
+                </p>
+
+                <button
+                    type="button"
+                    id="reward-wheel-next-button"
+                    class="reward-wheel-main-button"
+                >
+                    Continue to Level 3 🗝️
+                </button>
+
+                <button
+                    type="button"
+                    id="spin-wheel-again-button"
+                    class="reward-wheel-secondary-button"
+                >
+                    Watch the wheel again
+                </button>
+
+                <button
+                    type="button"
+                    id="reward-wheel-result-menu-button"
+                    class="reward-wheel-secondary-button"
+                >
+                    Back to menu
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- LEVEL 3: MEMORY ESCAPE ROOM                         -->
+    <!-- ================================================== -->
+
+    <section
+        id="escape-room-screen"
+        class="screen hidden"
+    >
+        <div class="escape-room-wrapper">
+
+            <div class="escape-doodle escape-doodle-1">
+                🗝️
+            </div>
+
+            <div class="escape-doodle escape-doodle-2">
+                ✨
+            </div>
+
+            <div class="escape-doodle escape-doodle-3">
+                🔍
+            </div>
+
+            <div class="escape-doodle escape-doodle-4">
+                💗
+            </div>
+
+            <!-- ESCAPE ROOM INTRO -->
+
+            <div
+                id="escape-room-intro"
+                class="escape-card"
+            >
+                <p class="escape-small-heading">
+                    Level 3 • Final key mission 🔐
+                </p>
+
+                <h2>
+                    The Memory Escape Room
+                </h2>
+
+                <p class="escape-intro-text">
+                    Relationship Key No. 3 is hidden somewhere inside this room.
+                    Five riddles guard it, and every correct object reveals the
+                    clue leading to the next one.
+                </p>
+
+                <div class="escape-rules">
+
+                    <div>
+                        <span>🔍</span>
+
+                        <p>
+                            Read each riddle and carefully search the room.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>👆</span>
+
+                        <p>
+                            Click the object described by the current clue.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>🧩</span>
+
+                        <p>
+                            Every correct object reveals the next riddle.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>🗝️</span>
+
+                        <p>
+                            Solve all five clues to uncover the final key.
+                        </p>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="start-escape-room-button"
+                    class="escape-main-button"
+                >
+                    Enter the room 🔍
+                </button>
+
+                <button
+                    type="button"
+                    id="escape-intro-menu-button"
+                    class="escape-secondary-button"
+                >
+                    Back to menu
+                </button>
+
+            </div>
+
+            <!-- ACTIVE ESCAPE ROOM -->
+
+            <div
+                id="escape-room-game"
+                class="escape-game-card hidden"
+            >
+                <div class="escape-game-header">
+
+                    <div>
+
+                        <p class="escape-progress-label">
+                            Investigation progress
+                        </p>
+
+                        <strong id="escape-progress-text">
+                            Clue 1 of 5
+                        </strong>
+
+                    </div>
+
+                    <div class="escape-key-counter">
+
+                        <span>
+                            🗝️
+                        </span>
+
+                        <strong id="escape-clues-solved">
+                            0 / 5
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="escape-progress-track">
+
+                    <div
+                        id="escape-progress-fill"
+                        class="escape-progress-fill"
+                    ></div>
+
+                </div>
+
+                <div class="escape-clue-paper">
+
+                    <p>
+                        Current riddle
+                    </p>
+
+                    <div id="escape-clue-poem">
+
+                        <span>
+                            I stand quite still against the wall,
+                        </span>
+
+                        <span>
+                            Yet hold more worlds than one could call.
+                        </span>
+
+                        <span>
+                            My rows are filled with tales that sleep,
+                        </span>
+
+                        <span>
+                            Find me where quiet stories keep.
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <p
+                    id="escape-feedback"
+                    class="escape-feedback"
+                >
+                    Search the room and click the object described by the poem.
+                </p>
+
+                <!-- FULL DECORATED ROOM -->
+
+                <div
+                    id="escape-room-scene"
+                    class="escape-room-scene"
+                >
+                    <div class="escape-wall">
+
+                        <div class="fairy-light-string">
+
+                            <span>💡</span>
+                            <span>💡</span>
+                            <span>💡</span>
+                            <span>💡</span>
+                            <span>💡</span>
+                            <span>💡</span>
+                            <span>💡</span>
+                            <span>💡</span>
+
+                        </div>
+
+                        <div class="moon-garland">
+
+                            <span>★</span>
+                            <span>☾</span>
+                            <span>★</span>
+                            <span>☁</span>
+                            <span>★</span>
+
+                        </div>
+
+                        <div class="wall-poster poster-one">
+
+                            <span>
+                                YOU
+                            </span>
+
+                            <small>
+                                + ME
+                            </small>
+
+                        </div>
+
+                        <div class="wall-poster poster-two">
+
+                            <span>
+                                🌷
+                            </span>
+
+                        </div>
+
+                        <div class="wall-vinyl">
+                            🎵
+                        </div>
+
+                        <div class="hanging-plant">
+
+                            <span class="hanger-string"></span>
+
+                            <span class="hanging-pot">
+                                🪴
+                            </span>
+
+                        </div>
+
+                        <div class="small-wall-shelf">
+
+                            <span>📗</span>
+                            <span>🕯️</span>
+                            <span>💗</span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="room-object room-window"
+                            data-object="window"
+                            aria-label="Window"
+                        >
+                            <span class="object-emoji">
+                                🌙
+                            </span>
+
+                            <span class="object-name">
+                                Window
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="room-object room-clock"
+                            data-object="clock"
+                            aria-label="Clock"
+                        >
+                            <span class="object-emoji">
+                                🕰️
+                            </span>
+
+                            <span class="object-name">
+                                Clock
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="room-object room-photo"
+                            data-object="photo"
+                            aria-label="Photograph"
+                        >
+                            <span class="object-emoji">
+                                🖼️
+                            </span>
+
+                            <span class="object-name">
+                                Photo
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="room-object room-mirror"
+                            data-object="mirror"
+                            aria-label="Mirror"
+                        >
+                            <span class="mirror-glass">
+                                ✨
+                            </span>
+
+                            <span class="object-name">
+                                Mirror
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="room-object room-bookshelf"
+                            data-object="bookshelf"
+                            aria-label="Bookshelf"
+                        >
+                            <span class="shelf-top">
+                                🌿
+                            </span>
+
+                            <span class="shelf-books">
+                                📕 📘 📗
+                            </span>
+
+                            <span class="shelf-books">
+                                📙 📓 📔
+                            </span>
+
+                            <span class="shelf-books">
+                                📚 🕯️ 🧸
+                            </span>
+
+                            <span class="object-name">
+                                Bookshelf
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="room-object room-camera"
+                            data-object="camera"
+                            aria-label="Camera"
+                        >
+                            <span class="object-emoji">
+                                📷
+                            </span>
+
+                            <span class="object-name">
+                                Camera
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="room-object room-lamp"
+                            data-object="lamp"
+                            aria-label="Lamp"
+                        >
+                            <span class="lamp-light">
+                                💡
+                            </span>
+
+                            <span class="lamp-base"></span>
+
+                            <span class="object-name">
+                                Lamp
+                            </span>
+                        </button>
+
+                    </div>
+
+                    <div class="escape-floor">
+
+                        <button
+                            type="button"
+                            class="room-object room-bed"
+                            data-object="bed"
+                            aria-label="Bed"
+                        >
+                            <span class="bed-headboard"></span>
+
+                            <span class="bed-pillows">
+                                ☁️ 💗
+                            </span>
+
+                            <span class="bed-blanket"></span>
+
+                            <span class="bed-body">
+                                🛏️
+                            </span>
+
+                            <span class="object-name">
+                                Bed
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="room-object room-teddy"
+                            data-object="teddy"
+                            aria-label="Teddy bear"
+                        >
+                            <span class="object-emoji">
+                                🧸
+                            </span>
+
+                            <span class="object-name">
+                                Teddy
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="room-object room-pink-box"
+                            data-object="pink-box"
+                            aria-label="Pink box"
+                        >
+                            <span class="box-lid">
+                                🎀
+                            </span>
+
+                            <span class="box-body">
+                                🎁
+                            </span>
+
+                            <span class="object-name">
+                                Pink box
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="room-object room-plant"
+                            data-object="plant"
+                            aria-label="Plant"
+                        >
+                            <span class="object-emoji">
+                                🪴
+                            </span>
+
+                            <span class="object-name">
+                                Plant
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="room-object room-drawer"
+                            data-object="drawer"
+                            aria-label="Drawer"
+                        >
+                            <span class="drawer-top">
+                                ☕
+                            </span>
+
+                            <span class="drawer-body">
+                                🗄️
+                            </span>
+
+                            <span class="object-name">
+                                Drawer
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="room-object room-rug"
+                            data-object="rug"
+                            aria-label="Rug"
+                        >
+                            <span class="rug-pattern">
+                                🌸 ✨ 💗 ✨ 🌸
+                            </span>
+
+                            <span class="object-name">
+                                Rug
+                            </span>
+                        </button>
+
+                        <div class="floor-cushion">
+
+                            <span>
+                                ☁️
+                            </span>
+
+                        </div>
+
+                        <div class="room-slippers">
+
+                            <span>
+                                🩰
+                            </span>
+
+                        </div>
+
+                        <div class="storage-basket">
+
+                            <span>
+                                🧺
+                            </span>
+
+                            <small>
+                                🧣
+                            </small>
+
+                        </div>
+
+                        <div class="tiny-side-table">
+
+                            <span class="tiny-table-top"></span>
+
+                            <span class="tiny-table-leg left"></span>
+
+                            <span class="tiny-table-leg right"></span>
+
+                            <span class="tiny-table-decor">
+                                🌷
+                            </span>
+
+                        </div>
+
+                        <div class="room-cat">
+                            🐈
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="hidden-key-compartment"
+                        class="hidden-key-compartment hidden"
+                    >
+                        <div class="key-sparkle sparkle-a">
+                            ✨
+                        </div>
+
+                        <div class="key-sparkle sparkle-b">
+                            💗
+                        </div>
+
+                        <div class="key-sparkle sparkle-c">
+                            ⭐
+                        </div>
+
+                        <div class="final-room-key">
+                            🗝️
+                        </div>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="escape-game-menu-button"
+                    class="escape-secondary-button"
+                >
+                    Leave the room
+                </button>
+
+            </div>
+
+            <!-- KEY 3 RESULT -->
+
+            <div
+                id="escape-room-finish"
+                class="escape-card escape-finish-card hidden"
+            >
+                <div class="escape-celebration">
+
+                    <span>✨</span>
+                    <span>🎉</span>
+                    <span>💗</span>
+                    <span>🗝️</span>
+                    <span>🌈</span>
+
+                </div>
+
+                <p class="escape-small-heading">
+                    Final key discovered
+                </p>
+
+                <h2>
+                    You escaped!
+                </h2>
+
+                <div class="escape-final-key">
+                    🗝️
+                </div>
+
+                <div class="escape-key-certificate">
+
+                    <p>
+                        You received
+                    </p>
+
+                    <strong>
+                        Relationship Key No. 3
+                    </strong>
+
+                    <span>
+                        Found by my favourite person
+                    </span>
+
+                    <small>
+                        Our story began: 02 August 2023
+                    </small>
+
+                </div>
+
+                <div class="escape-final-poem">
+
+                    <span>
+                        You followed every hidden trail,
+                    </span>
+
+                    <span>
+                        And solved the room without a fail.
+                    </span>
+
+                    <span>
+                        Three little keys are yours to keep—
+                    </span>
+
+                    <span>
+                        One final secret waits beneath. 💗
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="escape-final-surprise-button"
+                    class="escape-main-button"
+                >
+                    Use all three keys 💌
+                </button>
+
+                <button
+                    type="button"
+                    id="replay-escape-room-button"
+                    class="escape-secondary-button"
+                >
+                    Search the room again
+                </button>
+
+                <button
+                    type="button"
+                    id="escape-finish-menu-button"
+                    class="escape-secondary-button"
+                >
+                    Back to menu
+                </button>
+
+            </div>
+
+
+            <!-- ================================================== -->
+            <!-- FINAL SURPRISE                                     -->
+            <!-- ================================================== -->
+
+            <div
+                id="final-surprise-placeholder"
+                class="escape-card hidden"
+            >
+                <div class="final-surprise-shell">
+
+                    <!-- KEY UNLOCKING STAGE -->
+
+                    <div
+                        id="final-stage-keys"
+                        class="final-stage"
+                    >
+                        <p class="final-small-heading">
+                            All three keys accepted 💌
+                        </p>
+
+                        <h2 class="final-main-title">
+                            The Final Surprise
+                        </h2>
+
+                        <p class="final-main-text">
+                            Three little keys, three little trials,
+                            all leading back to us.
+                            You found every one.
+                            Now open what they were protecting 💗
+                        </p>
+
+                        <div class="final-key-row">
+
+                            <div
+                                class="final-key-chip"
+                                id="final-key-1"
+                            >
+                                <span>🔑</span>
+                                <p>Key 1</p>
+                            </div>
+
+                            <div
+                                class="final-key-chip"
+                                id="final-key-2"
+                            >
+                                <span>🔑</span>
+                                <p>Key 2</p>
+                            </div>
+
+                            <div
+                                class="final-key-chip"
+                                id="final-key-3"
+                            >
+                                <span>🔑</span>
+                                <p>Key 3</p>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="unlock-final-surprise-button"
+                            class="final-main-button"
+                        >
+                            Unlock the final surprise 💌
+                        </button>
+
+                        <button
+                            type="button"
+                            id="final-surprise-menu-button"
+                            class="final-secondary-button"
+                        >
+                            Back to menu
+                        </button>
+
+                    </div>
+
+
+                    <!-- ENVELOPE STAGE -->
+
+                    <div
+                        id="final-stage-envelope"
+                        class="final-stage hidden"
+                    >
+                        <p class="final-small-heading">
+                            A letter just for you
+                        </p>
+
+                        <h2 class="final-main-title">
+                            Open this, baby 💖
+                        </h2>
+
+                        <p class="final-main-text">
+                            There is something I wanted to tell you properly.
+                        </p>
+
+                        <div
+                            id="final-envelope"
+                            class="final-envelope"
+                        >
+                            <div class="final-envelope-back"></div>
+
+                            <div class="final-envelope-letter">
+                                💌
+                            </div>
+
+                            <div class="final-envelope-front"></div>
+
+                            <div class="final-envelope-flap"></div>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="open-envelope-button"
+                            class="final-main-button"
+                        >
+                            Open the letter 🥺
+                        </button>
+
+                    </div>
+
+
+                    <!-- LOVE LETTER STAGE -->
+
+                    <div
+                        id="final-stage-letter"
+                        class="final-stage hidden"
+                    >
+                        <p class="final-small-heading">
+                            Happy Anniversary 💝
+                        </p>
+
+                        <h2 class="final-main-title">
+                            My letter to you
+                        </h2>
+
+                        <div class="final-letter-card">
+
+                            <p class="final-letter-line">
+                                Happy Anniversary babyyyyyy 🥹🩷!!
+                            </p>
+
+                            <p class="final-letter-line">
+                                Amader 3 years hoye gelo, tumi bhabte parchho?????? 🥹🥺
+                                Amra shei awkward awkward kuchu smol 16-year-olds chilam.
+                                Ekhon amra koto mature 19-year-old duto smol babies
+                                🥺🩷🎀. Yayyy!
+                            </p>
+
+                            <p class="final-letter-line">
+                                Tomar amar gift-ta bhalo legechhe toh, baby????
+                                Ami bhablam eta kirokom hobe 👉👈.
+                                But egulo shob ChatGPT diye baniyechhi...
+                                waa, ami nije toh pari na 😭.
+                                Pore jokhon ami shob shikhe jabo,
+                                aro better baniye debo tokhon nije nije, hui.
+                            </p>
+
+                            <p class="final-letter-line">
+                                Ei last year-ta shotti bolte onekta difficult-o chhilo
+                                🥺🩷.
+                                But amra shob jhogra, difficulties,
+                                amader differences accept kore,
+                                jhamela solve kore,
+                                shob finally sort out kore niyechhi
+                                🥺❤️🦋.
+                            </p>
+
+                            <p class="final-letter-line">
+                                And ekhon amra onekta beshi beshi strong hoye gechhi —
+                                HUIHUIHUI.
+                                LESSGOO BABYYYYYYY!
+                            </p>
+
+                            <p class="final-letter-line">
+                                Amra ei tinte bochor onekta khete,
+                                onekta big porashona kore,
+                                onekta successful hobo,
+                                and amra finally amader kuchu home-e
+                                eksathe thakbo 🥺.
+                            </p>
+
+                            <p class="final-letter-line">
+                                Promise koro...
+                                pinky pomise???? 🩷🎀
+                                Hu, good boy.
+                                Hehehehe.
+                            </p>
+
+                            <p class="final-letter-line">
+                                Ei year amra koto sexy times-o korechhiiiiiiiii
+                                huihuihuihii 😭.
+                                Almost phuk kore phelechhilam
+                                hehehehehehe.
+                            </p>
+
+                            <p class="final-letter-line">
+                                But amar shob kichu khuuuubbb bhalo legechhe.
+                                And thank youuu amake eto comfortable,
+                                loved, and special feel koranor jonno.
+                            </p>
+
+                            <p class="final-letter-line">
+                                Ami tomake onek sad kore di sometimes 👉👈,
+                                and majhe majhe the best girlfriend hote pari na.
+                                But ami cheshta kori,
+                                bishwas koro 🥺.
+                                Aro cheshta kobbo, hui.
+                            </p>
+
+                            <p class="final-letter-line final-letter-highlight">
+                                I love you soooo much, babyyyyy.
+                            </p>
+
+                            <p class="final-letter-line final-letter-highlight">
+                                Ami forever and ever,
+                                every lifetime-e tomakei choose kobbo,
+                                hui 🥺🩷.
+                            </p>
+
+                            <p class="final-letter-line final-letter-signoff">
+                                Happy Anniversary 💝💖
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="open-memory-stars-button"
+                            class="final-main-button hidden"
+                        >
+                            Open our little stars ✨
+                        </button>
+
+                    </div>
+
+
+                    <!-- MEMORY STARS STAGE -->
+
+                    <div
+                        id="final-stage-stars"
+                        class="final-stage hidden"
+                    >
+                        <p class="final-small-heading">
+                            Tiny truths about you ✨
+                        </p>
+
+                        <h2 class="final-main-title">
+                            Click the stars
+                        </h2>
+
+                        <p class="final-main-text">
+                            Each little star hides something you are to me.
+                        </p>
+
+                        <div class="final-stars-grid">
+
+                            <button
+                                type="button"
+                                class="memory-star-button"
+                                data-message="My favourite laugh in the whole world 🥹"
+                            >
+                                ⭐
+                            </button>
+
+                            <button
+                                type="button"
+                                class="memory-star-button"
+                                data-message="My safest hug, even when you are far away 🫂"
+                            >
+                                ⭐
+                            </button>
+
+                            <button
+                                type="button"
+                                class="memory-star-button"
+                                data-message="My comfort person and my best boy 💗"
+                            >
+                                ⭐
+                            </button>
+
+                            <button
+                                type="button"
+                                class="memory-star-button"
+                                data-message="My favourite notification ever 📱💖"
+                            >
+                                ⭐
+                            </button>
+
+                            <button
+                                type="button"
+                                class="memory-star-button"
+                                data-message="The person I want to tell everything to 🌷"
+                            >
+                                ⭐
+                            </button>
+
+                            <button
+                                type="button"
+                                class="memory-star-button"
+                                data-message="My home, even from far away 🏡🩷"
+                            >
+                                ⭐
+                            </button>
+
+                        </div>
+
+                        <div
+                            id="memory-star-message-box"
+                            class="memory-star-message-box"
+                        >
+                            Click a star, baby ✨
+                        </div>
+
+                        <button
+                            type="button"
+                            id="go-to-final-ending-button"
+                            class="final-main-button hidden"
+                        >
+                            One last thing 💝
+                        </button>
+
+                    </div>
+
+
+                    <!-- FINAL ENDING STAGE -->
+
+                    <div
+                        id="final-stage-ending"
+                        class="final-stage hidden"
+                    >
+                        <p class="final-small-heading">
+                            Final message
+                        </p>
+
+                        <h2 class="final-main-title">
+                            Happy 3rd Anniversary 💗
+                        </h2>
+
+                        <div class="final-ending-big">
+                            02 August 2023 — forever still loading...
+                        </div>
+
+                        <p class="final-main-text">
+                            Thank you for loving me,
+                            staying with me,
+                            growing with me,
+                            and being my babyyyyy.
+                            This website is my little online anniversary hug
+                            for you 🥺🩷🎀
+                        </p>
+
+                        <div class="final-ending-hearts">
+                            💗 💖 💝 💘 🩷 🎀 ✨
+                        </div>
+
+                        <button
+                            type="button"
+                            id="read-letter-again-button"
+                            class="final-main-button"
+                        >
+                            Read the letter again 💌
+                        </button>
+
+                        <button
+                            type="button"
+                            id="return-to-menu-final-button"
+                            class="final-secondary-button"
+                        >
+                            Return to our universe 🌸
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- JAVASCRIPT FILES                                   -->
+    <!-- ================================================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/album.js"></script>
+    <script src="js/boyfriend-test.js"></script>
+    <script src="js/catch-my-heart.js"></script>
+    <script src="js/scratch-card.js"></script>
+    <script src="js/reward-wheel.js"></script>
+    <script src="js/escape-room.js"></script>
+    <script src="js/final-surprise.js"></script>
+
+</body>
+
+</html>

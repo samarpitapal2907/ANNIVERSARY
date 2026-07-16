@@ -1,0 +1,1472 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fredoka:wght@500;600;700&display=swap");
+
+
+/* ==================================================== */
+/* SCREEN                                               */
+/* ==================================================== */
+
+#reward-wheel-screen {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 12% 15%,
+            rgba(255, 164, 207, 0.75),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 88% 16%,
+            rgba(164, 224, 255, 0.72),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 15% 88%,
+            rgba(185, 255, 214, 0.72),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 88% 85%,
+            rgba(255, 230, 134, 0.78),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff2f9,
+            #f8f2ff,
+            #fffce9
+        );
+}
+
+
+.reward-wheel-wrapper {
+    width: min(810px, 94vw);
+
+    margin: 0 auto;
+
+    position: relative;
+}
+
+
+/* ==================================================== */
+/* MAIN CARD                                            */
+/* ==================================================== */
+
+.reward-wheel-card {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    padding:
+        clamp(24px, 4vw, 42px);
+
+    border:
+        5px solid #ffffff;
+
+    border-radius:
+        38px;
+
+    background:
+        rgba(
+            255,
+            252,
+            254,
+            0.96
+        );
+
+    box-shadow:
+        0 10px 0 #ffc4dc,
+        0 26px 60px
+        rgba(
+            117,
+            43,
+            94,
+            0.19
+        );
+
+    text-align: center;
+}
+
+
+.reward-wheel-small-heading {
+    width: fit-content;
+
+    margin:
+        0 auto 12px;
+
+    padding:
+        8px 17px;
+
+    border-radius:
+        999px;
+
+    color:
+        #7c2a5a;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffed72,
+            #ffbd59
+        );
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+
+    box-shadow:
+        0 6px 14px
+        rgba(
+            255,
+            189,
+            89,
+            0.27
+        );
+}
+
+
+.reward-wheel-card h2 {
+    margin:
+        0;
+
+    color:
+        #762451;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        clamp(
+            2.5rem,
+            7vw,
+            4.5rem
+        );
+
+    font-weight:
+        800;
+
+    line-height:
+        0.95;
+
+    text-shadow:
+        3px 3px 0
+        #ffd9e9;
+}
+
+
+.reward-wheel-intro-text {
+    max-width:
+        610px;
+
+    margin:
+        17px auto 21px;
+
+    color:
+        #71465e;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-size:
+        1.03rem;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.55;
+}
+
+
+/* ==================================================== */
+/* REWARD PREVIEW                                       */
+/* ==================================================== */
+
+.reward-preview-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        11px;
+
+    margin:
+        22px 0 26px;
+}
+
+
+.reward-preview-grid div {
+    min-height:
+        100px;
+
+    padding:
+        14px 8px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        5px;
+
+    border:
+        3px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        );
+
+    border-radius:
+        20px;
+
+    font-size:
+        2rem;
+
+    box-shadow:
+        0 8px 18px
+        rgba(
+            110,
+            42,
+            83,
+            0.12
+        );
+}
+
+
+.reward-preview-grid div:nth-child(1) {
+    background:
+        #ffb8dc;
+}
+
+
+.reward-preview-grid div:nth-child(2) {
+    background:
+        #ff8fab;
+}
+
+
+.reward-preview-grid div:nth-child(3) {
+    background:
+        #ffbd77;
+}
+
+
+.reward-preview-grid div:nth-child(4) {
+    background:
+        #ffe66d;
+}
+
+
+.reward-preview-grid div:nth-child(5) {
+    background:
+        #9bf6ff;
+}
+
+
+.reward-preview-grid div:nth-child(6) {
+    background:
+        #a0c4ff;
+}
+
+
+.reward-preview-grid div:nth-child(7) {
+    background:
+        #cdb4ff;
+}
+
+
+.reward-preview-grid div:nth-child(8) {
+    background:
+        #b9fbc0;
+}
+
+
+.reward-preview-grid span {
+    color:
+        #6e3154;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-size:
+        0.83rem;
+
+    font-weight:
+        700;
+}
+
+
+/* ==================================================== */
+/* BUTTONS                                              */
+/* ==================================================== */
+
+.reward-wheel-main-button,
+.reward-wheel-secondary-button {
+    width:
+        min(
+            100%,
+            430px
+        );
+
+    margin:
+        12px auto 0;
+
+    padding:
+        14px 24px;
+
+    display:
+        block;
+
+    border:
+        none;
+
+    border-radius:
+        999px;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-size:
+        1.02rem;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+}
+
+
+.reward-wheel-main-button {
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3d96,
+            #ff6f61,
+            #ffa62b,
+            #8edb77,
+            #43b9ff,
+            #9a64ff,
+            #ff3d96
+        );
+
+    background-size:
+        250% 100%;
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            255,
+            61,
+            150,
+            0.28
+        );
+
+    animation:
+        rainbowButton
+        5s linear infinite;
+}
+
+
+.reward-wheel-secondary-button {
+    color:
+        #70405d;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0e5ff,
+            #ffd9eb
+        );
+}
+
+
+.reward-wheel-main-button:hover:not(:disabled),
+.reward-wheel-secondary-button:hover:not(:disabled) {
+    transform:
+        translateY(-3px)
+        scale(1.01);
+}
+
+
+.reward-wheel-main-button:disabled {
+    opacity:
+        0.55;
+
+    cursor:
+        not-allowed;
+
+    animation:
+        none;
+}
+
+
+@keyframes rainbowButton {
+
+    from {
+        background-position:
+            0% 50%;
+    }
+
+    to {
+        background-position:
+            250% 50%;
+    }
+
+}
+
+
+/* ==================================================== */
+/* WHEEL AREA                                           */
+/* ==================================================== */
+
+.wheel-area {
+    width:
+        min(
+            510px,
+            82vw
+        );
+
+    aspect-ratio:
+        1 / 1;
+
+    margin:
+        30px auto 18px;
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+}
+
+
+.wheel-pointer {
+    position:
+        absolute;
+
+    top:
+        -28px;
+
+    left:
+        50%;
+
+    z-index:
+        20;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        #7c2459;
+
+    font-size:
+        4.1rem;
+
+    line-height:
+        1;
+
+    filter:
+        drop-shadow(
+            0 5px 0
+            #ffffff
+        )
+        drop-shadow(
+            0 9px 7px
+            rgba(
+                95,
+                37,
+                70,
+                0.22
+            )
+        );
+}
+
+
+.colourful-reward-wheel {
+    width:
+        100%;
+
+    height:
+        100%;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border:
+        13px solid
+        #ffffff;
+
+    border-radius:
+        50%;
+
+    background:
+        conic-gradient(
+            from -22.5deg,
+            #ff4f9a 0deg 45deg,
+            #ff8c61 45deg 90deg,
+            #ffd93d 90deg 135deg,
+            #65d889 135deg 180deg,
+            #47c8ff 180deg 225deg,
+            #748ffc 225deg 270deg,
+            #ae72ff 270deg 315deg,
+            #ff77c8 315deg 360deg
+        );
+
+    box-shadow:
+        0 0 0 8px
+        #ffdc73,
+
+        0 0 0 14px
+        #ff8ebd,
+
+        0 20px 45px
+        rgba(
+            98,
+            40,
+            76,
+            0.29
+        );
+
+    transition:
+        transform
+        5.5s
+        cubic-bezier(
+            0.12,
+            0.72,
+            0.12,
+            1
+        );
+
+    transform:
+        rotate(0deg);
+
+    will-change:
+        transform;
+}
+
+
+.colourful-reward-wheel::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        50%;
+
+    background:
+        repeating-conic-gradient(
+            from 0deg,
+            rgba(
+                255,
+                255,
+                255,
+                0.28
+            )
+            0deg 1.2deg,
+            transparent
+            1.2deg 45deg
+        );
+
+    pointer-events:
+        none;
+}
+
+
+.colourful-reward-wheel::after {
+    content:
+        "";
+
+    width:
+        93%;
+
+    height:
+        93%;
+
+    position:
+        absolute;
+
+    top:
+        3.5%;
+
+    left:
+        3.5%;
+
+    border:
+        3px dashed
+        rgba(
+            255,
+            255,
+            255,
+            0.58
+        );
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+}
+
+
+/* ==================================================== */
+/* WHEEL LABELS                                         */
+/* ==================================================== */
+
+.wheel-label {
+    width:
+        112px;
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    z-index:
+        4;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        1px;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-size:
+        0.79rem;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.05;
+
+    text-align:
+        center;
+
+    text-shadow:
+        0 2px 4px
+        rgba(
+            70,
+            25,
+            55,
+            0.55
+        );
+
+    transform-origin:
+        0 0;
+}
+
+
+.wheel-label span {
+    font-size:
+        1.7rem;
+
+    text-shadow:
+        none;
+}
+
+
+.label-1 {
+    transform:
+        rotate(0deg)
+        translateY(-185px)
+        rotate(0deg)
+        translateX(-56px);
+}
+
+
+.label-2 {
+    transform:
+        rotate(45deg)
+        translateY(-185px)
+        rotate(-45deg)
+        translateX(-56px);
+}
+
+
+.label-3 {
+    transform:
+        rotate(90deg)
+        translateY(-185px)
+        rotate(-90deg)
+        translateX(-56px);
+}
+
+
+.label-4 {
+    transform:
+        rotate(135deg)
+        translateY(-185px)
+        rotate(-135deg)
+        translateX(-56px);
+}
+
+
+.label-5 {
+    transform:
+        rotate(180deg)
+        translateY(-185px)
+        rotate(-180deg)
+        translateX(-56px);
+}
+
+
+.label-6 {
+    transform:
+        rotate(225deg)
+        translateY(-185px)
+        rotate(-225deg)
+        translateX(-56px);
+}
+
+
+.label-7 {
+    transform:
+        rotate(270deg)
+        translateY(-185px)
+        rotate(-270deg)
+        translateX(-56px);
+}
+
+
+.label-8 {
+    transform:
+        rotate(315deg)
+        translateY(-185px)
+        rotate(-315deg)
+        translateX(-56px);
+}
+
+
+/* ==================================================== */
+/* CENTRE                                               */
+/* ==================================================== */
+
+.wheel-centre {
+    width:
+        100px;
+
+    height:
+        100px;
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    z-index:
+        10;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border:
+        8px solid
+        #ffffff;
+
+    border-radius:
+        50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffec73,
+            #ff91c3
+        );
+
+    font-size:
+        3rem;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            80,
+            29,
+            64,
+            0.3
+        );
+}
+
+
+/* ==================================================== */
+/* STATUS                                               */
+/* ==================================================== */
+
+.wheel-status-message {
+    min-height:
+        28px;
+
+    margin:
+        18px 0 6px;
+
+    color:
+        #7b3a5d;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        700;
+}
+
+
+.wheel-status-message.spinning-message {
+    animation:
+        statusBounce
+        0.6s ease-in-out infinite alternate;
+}
+
+
+@keyframes statusBounce {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(-5px);
+    }
+
+}
+
+
+/* ==================================================== */
+/* RESULT                                               */
+/* ==================================================== */
+
+.reward-result-card {
+    overflow:
+        hidden;
+}
+
+
+.reward-confetti {
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        18px;
+
+    margin-bottom:
+        14px;
+
+    font-size:
+        2rem;
+}
+
+
+.reward-confetti span {
+    animation:
+        confettiBounce
+        1.5s ease-in-out infinite;
+}
+
+
+.reward-confetti span:nth-child(2) {
+    animation-delay:
+        0.15s;
+}
+
+
+.reward-confetti span:nth-child(3) {
+    animation-delay:
+        0.3s;
+}
+
+
+.reward-confetti span:nth-child(4) {
+    animation-delay:
+        0.45s;
+}
+
+
+.reward-confetti span:nth-child(5) {
+    animation-delay:
+        0.6s;
+}
+
+
+@keyframes confettiBounce {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(9deg);
+    }
+
+}
+
+
+.reward-result-emoji {
+    margin:
+        22px 0 14px;
+
+    font-size:
+        clamp(
+            5rem,
+            14vw,
+            8rem
+        );
+
+    animation:
+        rewardPop
+        1.2s ease-in-out infinite alternate;
+}
+
+
+@keyframes rewardPop {
+
+    from {
+        transform:
+            scale(0.95)
+            rotate(-4deg);
+    }
+
+    to {
+        transform:
+            scale(1.08)
+            rotate(4deg);
+    }
+
+}
+
+
+.reward-result-ticket {
+    max-width:
+        570px;
+
+    margin:
+        0 auto;
+
+    padding:
+        25px;
+
+    border:
+        4px dashed
+        #ff79ae;
+
+    border-radius:
+        28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0a8,
+            #ffd7e8,
+            #dcd0ff,
+            #c8f7e4
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            105,
+            42,
+            81,
+            0.15
+        );
+}
+
+
+.reward-result-ticket p {
+    margin:
+        0 0 7px;
+
+    color:
+        #79415d;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-weight:
+        600;
+}
+
+
+.reward-result-ticket strong {
+    display:
+        block;
+
+    color:
+        #70234f;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        clamp(
+            2rem,
+            6vw,
+            3.2rem
+        );
+
+    font-weight:
+        800;
+
+    line-height:
+        1;
+}
+
+
+.reward-result-ticket span {
+    display:
+        block;
+
+    margin-top:
+        12px;
+
+    color:
+        #72435c;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.45;
+}
+
+
+.reward-result-note {
+    max-width:
+        570px;
+
+    margin:
+        20px auto;
+
+    color:
+        #72445d;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.5;
+}
+
+
+/* ==================================================== */
+/* FUTURE PREVIEW                                       */
+/* ==================================================== */
+
+.future-preview {
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        20px;
+
+    margin:
+        30px 0;
+
+    font-size:
+        clamp(
+            2.7rem,
+            8vw,
+            4.5rem
+        );
+}
+
+
+.future-preview span {
+    animation:
+        futureFloat
+        2.2s ease-in-out infinite;
+}
+
+
+.future-preview span:nth-child(2) {
+    animation-delay:
+        0.2s;
+}
+
+
+.future-preview span:nth-child(3) {
+    animation-delay:
+        0.4s;
+}
+
+
+.future-preview span:nth-child(4) {
+    animation-delay:
+        0.6s;
+}
+
+
+.future-preview span:nth-child(5) {
+    animation-delay:
+        0.8s;
+}
+
+
+@keyframes futureFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-10px);
+    }
+
+}
+
+
+/* ==================================================== */
+/* DECORATIONS                                          */
+/* ==================================================== */
+
+.wheel-doodle {
+    position:
+        absolute;
+
+    z-index:
+        1;
+
+    pointer-events:
+        none;
+
+    font-size:
+        2rem;
+
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(
+                95,
+                37,
+                73,
+                0.16
+            )
+        );
+
+    animation:
+        wheelDoodleFloat
+        4s ease-in-out infinite;
+}
+
+
+.wheel-doodle-1 {
+    top:
+        -28px;
+
+    left:
+        -28px;
+}
+
+
+.wheel-doodle-2 {
+    top:
+        50px;
+
+    right:
+        -30px;
+
+    animation-delay:
+        0.5s;
+}
+
+
+.wheel-doodle-3 {
+    top:
+        44%;
+
+    left:
+        -35px;
+
+    animation-delay:
+        1s;
+}
+
+
+.wheel-doodle-4 {
+    top:
+        48%;
+
+    right:
+        -35px;
+
+    animation-delay:
+        1.5s;
+}
+
+
+.wheel-doodle-5 {
+    bottom:
+        -25px;
+
+    left:
+        38px;
+
+    animation-delay:
+        2s;
+}
+
+
+.wheel-doodle-6 {
+    right:
+        38px;
+
+    bottom:
+        -28px;
+
+    animation-delay:
+        2.5s;
+}
+
+
+@keyframes wheelDoodleFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-9px)
+            rotate(6deg);
+    }
+
+}
+
+
+/* ==================================================== */
+/* RESPONSIVE                                           */
+/* ==================================================== */
+
+@media (max-width: 700px) {
+
+    .reward-preview-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .reward-wheel-card {
+        padding:
+            27px 16px;
+    }
+
+    .wheel-label {
+        width:
+            82px;
+
+        font-size:
+            0.65rem;
+    }
+
+    .wheel-label span {
+        font-size:
+            1.35rem;
+    }
+
+    .label-1 {
+        transform:
+            rotate(0deg)
+            translateY(-135px)
+            rotate(0deg)
+            translateX(-41px);
+    }
+
+    .label-2 {
+        transform:
+            rotate(45deg)
+            translateY(-135px)
+            rotate(-45deg)
+            translateX(-41px);
+    }
+
+    .label-3 {
+        transform:
+            rotate(90deg)
+            translateY(-135px)
+            rotate(-90deg)
+            translateX(-41px);
+    }
+
+    .label-4 {
+        transform:
+            rotate(135deg)
+            translateY(-135px)
+            rotate(-135deg)
+            translateX(-41px);
+    }
+
+    .label-5 {
+        transform:
+            rotate(180deg)
+            translateY(-135px)
+            rotate(-180deg)
+            translateX(-41px);
+    }
+
+    .label-6 {
+        transform:
+            rotate(225deg)
+            translateY(-135px)
+            rotate(-225deg)
+            translateX(-41px);
+    }
+
+    .label-7 {
+        transform:
+            rotate(270deg)
+            translateY(-135px)
+            rotate(-270deg)
+            translateX(-41px);
+    }
+
+    .label-8 {
+        transform:
+            rotate(315deg)
+            translateY(-135px)
+            rotate(-315deg)
+            translateX(-41px);
+    }
+
+    .wheel-centre {
+        width:
+            76px;
+
+        height:
+            76px;
+
+        font-size:
+            2.2rem;
+    }
+
+    .wheel-pointer {
+        top:
+            -23px;
+
+        font-size:
+            3.4rem;
+    }
+
+    .wheel-doodle {
+        opacity:
+            0.45;
+    }
+
+}
