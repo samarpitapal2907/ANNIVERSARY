@@ -1,588 +1,619 @@
-/* ==================================================== */
-/* REWARD WHEEL ELEMENTS                                */
-/* ==================================================== */
-
-const rewardWheelScreen =
-    document.getElementById(
-        "reward-wheel-screen"
-    );
-
-const rewardWheelIntro =
-    document.getElementById(
-        "reward-wheel-intro"
-    );
-
-const rewardWheelGame =
-    document.getElementById(
-        "reward-wheel-game"
-    );
-
-const rewardWheelResult =
-    document.getElementById(
-        "reward-wheel-result"
-    );
-
-const buildFuturePlaceholder =
-    document.getElementById(
-        "build-future-placeholder"
-    );
-
-const openRewardWheelButton =
-    document.getElementById(
-        "open-reward-wheel-button"
-    );
-
-const spinRewardWheelButton =
-    document.getElementById(
-        "spin-reward-wheel-button"
-    );
-
-const spinWheelAgainButton =
-    document.getElementById(
-        "spin-wheel-again-button"
-    );
-
-const rewardWheelNextButton =
-    document.getElementById(
-        "reward-wheel-next-button"
-    );
-
-const colourfulRewardWheel =
-    document.getElementById(
-        "colourful-reward-wheel"
-    );
-
-const wheelStatusMessage =
-    document.getElementById(
-        "wheel-status-message"
-    );
-
-const rewardResultEmoji =
-    document.getElementById(
-        "reward-result-emoji"
-    );
-
-const rewardResultTitle =
-    document.getElementById(
-        "reward-result-title"
-    );
-
-const rewardResultDescription =
-    document.getElementById(
-        "reward-result-description"
-    );
-
-const rewardWheelIntroMenuButton =
-    document.getElementById(
-        "reward-wheel-intro-menu-button"
-    );
-
-const rewardWheelGameMenuButton =
-    document.getElementById(
-        "reward-wheel-game-menu-button"
-    );
-
-const rewardWheelResultMenuButton =
-    document.getElementById(
-        "reward-wheel-result-menu-button"
-    );
-
-const futurePlaceholderMenuButton =
-    document.getElementById(
-        "future-placeholder-menu-button"
-    );
-
-
-/* ==================================================== */
-/* REWARDS                                              */
-/* ==================================================== */
-
-const anniversaryRewards = [
+(() => {
 
-    {
-        emoji:
-            "🫂",
+    /* ==================================================== */
+    /* ELEMENTS                                             */
+    /* ==================================================== */
 
-        title:
-            "One Extra-Long Hug",
+    const rewardWheelScreen =
+        document.getElementById("reward-wheel-screen");
 
-        description:
-            "A warm, tight, no-rushing hug that lasts for as long as you need it."
-    },
+    const rewardWheelIntro =
+        document.getElementById("reward-wheel-intro");
 
-    {
-        emoji:
-            "💋",
+    const rewardWheelGame =
+        document.getElementById("reward-wheel-game");
 
-        title:
-            "Five Bonus Kisses",
+    const rewardWheelResult =
+        document.getElementById("reward-wheel-result");
 
-        description:
-            "Five officially approved kisses, redeemable together or one at a time."
-    },
 
-    {
-        emoji:
-            "🌆",
+    const openRewardWheelButton =
+        document.getElementById("open-reward-wheel-button");
 
-        title:
-            "Choose Our Next Date",
+    const spinRewardWheelButton =
+        document.getElementById("spin-reward-wheel-button");
 
-        description:
-            "You choose where we go and what we do on one of our upcoming dates."
-    },
+    const spinWheelAgainButton =
+        document.getElementById("spin-wheel-again-button");
 
-    {
-        emoji:
-            "🍫",
+    const rewardWheelNextButton =
+        document.getElementById("reward-wheel-next-button");
 
-        title:
-            "Favourite Snack Treat",
 
-        description:
-            "One favourite snack or small food treat, lovingly provided by your girlfriend."
-    },
+    const colourfulRewardWheel =
+        document.getElementById("colourful-reward-wheel");
 
-    {
-        emoji:
-            "🎬",
+    const wheelStatusMessage =
+        document.getElementById("wheel-status-message");
 
-        title:
-            "Movie Night of Your Choice",
+    const rewardResultEmoji =
+        document.getElementById("reward-result-emoji");
 
-        description:
-            "You choose the movie, and I promise not to complain about your selection."
-    },
+    const rewardResultTitle =
+        document.getElementById("reward-result-title");
 
-    {
-        emoji:
-            "🎵",
+    const rewardResultDescription =
+        document.getElementById("reward-result-description");
 
-        title:
-            "A Song Dedicated to You",
 
-        description:
-            "I will sing or record one special song chosen especially for you."
-    },
-
-    {
-        emoji:
-            "✨",
-
-        title:
-            "One Little Wish Granted",
-
-        description:
-            "One reasonable little wish approved under official anniversary rules."
-    },
-
-    {
-        emoji:
-            "🎁",
-
-        title:
-            "A Tiny Surprise Gift",
-
-        description:
-            "A cute little surprise chosen especially for you and delivered later."
-    }
-
-];
-
-
-/* ==================================================== */
-/* WHEEL STATE                                          */
-/* ==================================================== */
-
-let rewardWheelSpinning =
-    false;
-
-let currentWheelRotation =
-    0;
-
-let selectedRewardIndex =
-    null;
-
-
-/* ==================================================== */
-/* SCREEN HELPERS                                       */
-/* ==================================================== */
-
-function hideRewardWheelCards() {
-
-    rewardWheelIntro.classList.add(
-        "hidden"
-    );
-
-    rewardWheelGame.classList.add(
-        "hidden"
-    );
-
-    rewardWheelResult.classList.add(
-        "hidden"
-    );
-
-    buildFuturePlaceholder.classList.add(
-        "hidden"
-    );
-
-}
-
-
-function hideAllRewardWebsiteScreens() {
-
-    const allScreens =
-        document.querySelectorAll(
-            ".screen"
-        );
-
-    allScreens.forEach(
-        function (screen) {
-
-            screen.classList.add(
-                "hidden"
-            );
-
-        }
-    );
-
-}
-
-
-function returnFromRewardWheelToMenu() {
-
-    hideAllRewardWebsiteScreens();
-
-    const menuScreen =
+    const rewardWheelIntroMenuButton =
         document.getElementById(
-            "menu-screen"
+            "reward-wheel-intro-menu-button"
         );
 
-    menuScreen.classList.remove(
-        "hidden"
-    );
+    const rewardWheelGameMenuButton =
+        document.getElementById(
+            "reward-wheel-game-menu-button"
+        );
 
-}
-
-
-/* ==================================================== */
-/* OPEN WHEEL                                           */
-/* ==================================================== */
-
-function showRewardWheelIntro() {
-
-    hideRewardWheelCards();
-
-    rewardWheelIntro.classList.remove(
-        "hidden"
-    );
-
-}
+    const rewardWheelResultMenuButton =
+        document.getElementById(
+            "reward-wheel-result-menu-button"
+        );
 
 
-function openWheelGame() {
+    if (
+        !rewardWheelScreen ||
+        !rewardWheelIntro ||
+        !rewardWheelGame ||
+        !rewardWheelResult
+    ) {
+        console.error(
+            "Reward wheel HTML elements were not found."
+        );
 
-    hideRewardWheelCards();
-
-    rewardWheelGame.classList.remove(
-        "hidden"
-    );
-
-    rewardWheelSpinning =
-        false;
-
-    selectedRewardIndex =
-        null;
-
-    currentWheelRotation =
-        0;
-
-    colourfulRewardWheel.style.transition =
-        "none";
-
-    colourfulRewardWheel.style.transform =
-        "rotate(0deg)";
-
-    spinRewardWheelButton.disabled =
-        false;
-
-    spinRewardWheelButton.textContent =
-        "Spin my reward! 🎡";
-
-    wheelStatusMessage.textContent =
-        "The wheel is waiting for you 👀";
-
-    wheelStatusMessage.className =
-        "wheel-status-message";
-
-}
-
-
-/* ==================================================== */
-/* SPIN                                                 */
-/* ==================================================== */
-
-function spinRewardWheel() {
-
-    if (rewardWheelSpinning) {
         return;
     }
 
-    rewardWheelSpinning =
-        true;
 
-    spinRewardWheelButton.disabled =
-        true;
+    /* ==================================================== */
+    /* REWARDS                                              */
+    /* ==================================================== */
 
-    spinRewardWheelButton.textContent =
-        "Spinning… 🌈";
-
-    wheelStatusMessage.textContent =
-        "Round and round it goes… no girlfriend interference allowed 😌✨";
-
-    wheelStatusMessage.className =
-        "wheel-status-message spinning-message";
-
-
-    selectedRewardIndex =
-        Math.floor(
-            Math.random()
-            * anniversaryRewards.length
-        );
-
-
-    /*
-        Each section is 45 degrees.
-
-        The centre angles of the sections are:
-
-        0 = 0 degrees
-        1 = 45 degrees
-        2 = 90 degrees
-        etc.
-
-        The extra negative rotation moves the selected
-        reward underneath the pointer at the top.
-    */
-
-    const segmentAngle =
-        360
-        / anniversaryRewards.length;
-
-    const selectedSegmentAngle =
-        selectedRewardIndex
-        * segmentAngle;
-
-    const randomOffset =
-        (
-            Math.random()
-            * 20
-        ) - 10;
-
-    const fullSpins =
-        6
-        + Math.floor(
-            Math.random() * 3
-        );
-
-    currentWheelRotation =
-        fullSpins * 360
-        - selectedSegmentAngle
-        - randomOffset;
-
-
-    colourfulRewardWheel.style.transition =
-        "transform 5.5s cubic-bezier(0.12, 0.72, 0.12, 1)";
-
-    colourfulRewardWheel.style.transform =
-        `rotate(${currentWheelRotation}deg)`;
-
-
-    setTimeout(
-        finishRewardWheelSpin,
-        5750
-    );
-
-}
-
-
-/* ==================================================== */
-/* FINISH SPIN                                          */
-/* ==================================================== */
-
-function finishRewardWheelSpin() {
-
-    rewardWheelSpinning =
-        false;
-
-    const selectedReward =
-        anniversaryRewards[
-            selectedRewardIndex
-        ];
-
-    wheelStatusMessage.textContent =
-        `${selectedReward.emoji} The wheel has made its official decision!`;
-
-    wheelStatusMessage.className =
-        "wheel-status-message";
-
-
-    localStorage.setItem(
-        "anniversaryWheelReward",
-        JSON.stringify(
-            selectedReward
-        )
-    );
-
-
-    setTimeout(
-        function () {
-
-            showRewardResult(
-                selectedReward
-            );
-
+    const anniversaryRewards = [
+        {
+            emoji: "🫂",
+            title: "One Extra-Long Hug",
+            description:
+                "A warm, tight, no-rushing hug that lasts for as long as you need it."
         },
-        700
-    );
-
-}
-
-
-/* ==================================================== */
-/* SHOW RESULT                                          */
-/* ==================================================== */
-
-function showRewardResult(
-    reward
-) {
-
-    hideRewardWheelCards();
-
-    rewardResultEmoji.textContent =
-        reward.emoji;
-
-    rewardResultTitle.textContent =
-        reward.title;
-
-    rewardResultDescription.textContent =
-        reward.description;
-
-    rewardWheelResult.classList.remove(
-        "hidden"
-    );
-
-}
-
-
-/* ==================================================== */
-/* WATCH WHEEL AGAIN                                    */
-/* ==================================================== */
-
-function watchWheelAgain() {
-
-    hideRewardWheelCards();
-
-    rewardWheelGame.classList.remove(
-        "hidden"
-    );
-
-    spinRewardWheelButton.disabled =
-        true;
-
-    spinRewardWheelButton.textContent =
-        "Official spin completed 💗";
-
-    wheelStatusMessage.textContent =
-        "Your official reward has already been selected ✨";
-
-    wheelStatusMessage.className =
-        "wheel-status-message";
-
-}
+        {
+            emoji: "💋",
+            title: "Five Bonus Kisses",
+            description:
+                "Five officially approved kisses, redeemable together or one at a time."
+        },
+        {
+            emoji: "🌆",
+            title: "Choose Our Next Date",
+            description:
+                "You choose where we go and what we do on one of our upcoming dates."
+        },
+        {
+            emoji: "🍫",
+            title: "Favourite Snack Treat",
+            description:
+                "One favourite snack or small food treat, lovingly provided by your girlfriend."
+        },
+        {
+            emoji: "🎬",
+            title: "Movie Night of Your Choice",
+            description:
+                "You choose the movie, and I promise not to complain about your selection."
+        },
+        {
+            emoji: "🎵",
+            title: "A Song Dedicated to You",
+            description:
+                "I will sing or record one special song chosen especially for you."
+        },
+        {
+            emoji: "✨",
+            title: "One Little Wish Granted",
+            description:
+                "One reasonable little wish approved under official anniversary rules."
+        },
+        {
+            emoji: "🎁",
+            title: "A Tiny Surprise Gift",
+            description:
+                "A cute little surprise chosen especially for you and delivered later."
+        }
+    ];
 
 
-/* ==================================================== */
-/* CONTINUE                                             */
-/* ==================================================== */
+    /* ==================================================== */
+    /* STATE                                                */
+    /* ==================================================== */
 
-function continueToBuildFuture() {
+    let rewardWheelSpinning = false;
 
-    hideRewardWheelCards();
+    let currentWheelRotation = 0;
 
-    buildFuturePlaceholder.classList.remove(
-        "hidden"
-    );
+    let selectedRewardIndex = null;
 
-}
+    let spinFinishTimer = null;
 
-
-/* ==================================================== */
-/* EVENT LISTENERS                                      */
-/* ==================================================== */
-
-openRewardWheelButton.addEventListener(
-    "click",
-    openWheelGame
-);
+    let resultTimer = null;
 
 
-spinRewardWheelButton.addEventListener(
-    "click",
-    spinRewardWheel
-);
+    /* ==================================================== */
+    /* HELPERS                                              */
+    /* ==================================================== */
+
+    function hideElement(element) {
+        if (element) {
+            element.classList.add("hidden");
+        }
+    }
 
 
-spinWheelAgainButton.addEventListener(
-    "click",
-    watchWheelAgain
-);
+    function showElement(element) {
+        if (element) {
+            element.classList.remove("hidden");
+        }
+    }
 
 
-rewardWheelNextButton.addEventListener(
-    "click",
-    continueToBuildFuture
-);
+    function hideRewardWheelCards() {
+        hideElement(rewardWheelIntro);
+        hideElement(rewardWheelGame);
+        hideElement(rewardWheelResult);
+    }
 
 
-rewardWheelIntroMenuButton.addEventListener(
-    "click",
-    returnFromRewardWheelToMenu
-);
+    function hideAllWebsiteScreens() {
+        const allScreens =
+            document.querySelectorAll(".screen");
+
+        allScreens.forEach((screen) => {
+            screen.classList.add("hidden");
+        });
+    }
 
 
-rewardWheelGameMenuButton.addEventListener(
-    "click",
-    returnFromRewardWheelToMenu
-);
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
 
 
-rewardWheelResultMenuButton.addEventListener(
-    "click",
-    returnFromRewardWheelToMenu
-);
-
-
-rewardWheelNextButton.addEventListener(
-    "click",
-
-    function () {
-
-        if (
-            typeof window.openEscapeRoom
-            === "function"
-        ) {
-
-            window.openEscapeRoom();
-
+    function clearWheelTimers() {
+        if (spinFinishTimer) {
+            clearTimeout(spinFinishTimer);
+            spinFinishTimer = null;
         }
 
+        if (resultTimer) {
+            clearTimeout(resultTimer);
+            resultTimer = null;
+        }
     }
-);
 
 
-/* ==================================================== */
-/* INITIAL STATE                                        */
-/* ==================================================== */
+    /* ==================================================== */
+    /* MAIN MENU                                            */
+    /* ==================================================== */
 
-showRewardWheelIntro();
+    function returnToMenu() {
+        clearWheelTimers();
+
+        rewardWheelSpinning = false;
+
+        hideAllWebsiteScreens();
+
+        const menuScreen =
+            document.getElementById("menu-screen");
+
+        showElement(menuScreen);
+
+        scrollToTop();
+    }
+
+
+    /* ==================================================== */
+    /* SHOW INTRO                                           */
+    /* ==================================================== */
+
+    function showRewardWheelIntro() {
+        hideRewardWheelCards();
+
+        showElement(rewardWheelIntro);
+
+        scrollToTop();
+    }
+
+
+    /* ==================================================== */
+    /* OPEN REWARD WHEEL FROM OTHER SECTIONS                */
+    /* ==================================================== */
+
+    function openRewardWheel() {
+        hideAllWebsiteScreens();
+
+        showElement(rewardWheelScreen);
+
+        showRewardWheelIntro();
+    }
+
+
+    /* ==================================================== */
+    /* OPEN WHEEL GAME                                      */
+    /* ==================================================== */
+
+    function openWheelGame() {
+        clearWheelTimers();
+
+        hideRewardWheelCards();
+
+        showElement(rewardWheelGame);
+
+        rewardWheelSpinning = false;
+        selectedRewardIndex = null;
+        currentWheelRotation = 0;
+
+
+        if (colourfulRewardWheel) {
+            colourfulRewardWheel.style.transition =
+                "none";
+
+            colourfulRewardWheel.style.transform =
+                "rotate(0deg)";
+        }
+
+
+        if (spinRewardWheelButton) {
+            spinRewardWheelButton.disabled = false;
+
+            spinRewardWheelButton.textContent =
+                "Spin my reward! 🎡";
+        }
+
+
+        if (wheelStatusMessage) {
+            wheelStatusMessage.textContent =
+                "The wheel is waiting for you 👀";
+
+            wheelStatusMessage.className =
+                "wheel-status-message";
+        }
+
+
+        scrollToTop();
+    }
+
+
+    /* ==================================================== */
+    /* SPIN WHEEL                                           */
+    /* ==================================================== */
+
+    function spinRewardWheel() {
+        if (
+            rewardWheelSpinning ||
+            !colourfulRewardWheel
+        ) {
+            return;
+        }
+
+
+        rewardWheelSpinning = true;
+
+
+        if (spinRewardWheelButton) {
+            spinRewardWheelButton.disabled = true;
+
+            spinRewardWheelButton.textContent =
+                "Spinning… 🎡";
+        }
+
+
+        if (wheelStatusMessage) {
+            wheelStatusMessage.textContent =
+                "Round and round it goes… no girlfriend interference allowed ✨";
+
+            wheelStatusMessage.className =
+                "wheel-status-message spinning-message";
+        }
+
+
+        selectedRewardIndex =
+            Math.floor(
+                Math.random() *
+                anniversaryRewards.length
+            );
+
+
+        const segmentAngle =
+            360 / anniversaryRewards.length;
+
+        const selectedSegmentAngle =
+            selectedRewardIndex * segmentAngle;
+
+        const randomOffset =
+            Math.random() * 20 - 10;
+
+        const fullSpins =
+            6 + Math.floor(Math.random() * 3);
+
+
+        currentWheelRotation =
+            fullSpins * 360 -
+            selectedSegmentAngle -
+            randomOffset;
+
+
+        colourfulRewardWheel.style.transition =
+            "transform 5.5s cubic-bezier(0.12, 0.72, 0.12, 1)";
+
+        colourfulRewardWheel.style.transform =
+            `rotate(${currentWheelRotation}deg)`;
+
+
+        spinFinishTimer =
+            setTimeout(
+                finishRewardWheelSpin,
+                5750
+            );
+    }
+
+
+    /* ==================================================== */
+    /* FINISH SPIN                                          */
+    /* ==================================================== */
+
+    function finishRewardWheelSpin() {
+        rewardWheelSpinning = false;
+
+
+        if (
+            selectedRewardIndex === null ||
+            !anniversaryRewards[selectedRewardIndex]
+        ) {
+            return;
+        }
+
+
+        const selectedReward =
+            anniversaryRewards[selectedRewardIndex];
+
+
+        if (wheelStatusMessage) {
+            wheelStatusMessage.textContent =
+                `${selectedReward.emoji} The wheel has made its official decision!`;
+
+            wheelStatusMessage.className =
+                "wheel-status-message";
+        }
+
+
+        localStorage.setItem(
+            "anniversaryWheelReward",
+            JSON.stringify(selectedReward)
+        );
+
+
+        resultTimer =
+            setTimeout(() => {
+                showRewardResult(selectedReward);
+            }, 700);
+    }
+
+
+    /* ==================================================== */
+    /* RESULT                                               */
+    /* ==================================================== */
+
+    function showRewardResult(reward) {
+        hideRewardWheelCards();
+
+
+        if (rewardResultEmoji) {
+            rewardResultEmoji.textContent =
+                reward.emoji;
+        }
+
+
+        if (rewardResultTitle) {
+            rewardResultTitle.textContent =
+                reward.title;
+        }
+
+
+        if (rewardResultDescription) {
+            rewardResultDescription.textContent =
+                reward.description;
+        }
+
+
+        showElement(rewardWheelResult);
+
+        scrollToTop();
+    }
+
+
+    /* ==================================================== */
+    /* WATCH WHEEL AGAIN                                    */
+    /* ==================================================== */
+
+    function watchWheelAgain() {
+        hideRewardWheelCards();
+
+        showElement(rewardWheelGame);
+
+
+        const savedRewardText =
+            localStorage.getItem(
+                "anniversaryWheelReward"
+            );
+
+
+        if (savedRewardText) {
+            if (spinRewardWheelButton) {
+                spinRewardWheelButton.disabled = true;
+
+                spinRewardWheelButton.textContent =
+                    "Official spin completed 💗";
+            }
+
+
+            if (wheelStatusMessage) {
+                wheelStatusMessage.textContent =
+                    "Your official reward has already been selected ✨";
+
+                wheelStatusMessage.className =
+                    "wheel-status-message";
+            }
+        } else {
+            if (spinRewardWheelButton) {
+                spinRewardWheelButton.disabled = false;
+
+                spinRewardWheelButton.textContent =
+                    "Spin my reward! 🎡";
+            }
+        }
+
+
+        scrollToTop();
+    }
+
+
+    /* ==================================================== */
+    /* CONTINUE TO ESCAPE ROOM                             */
+    /* ==================================================== */
+
+    function continueToEscapeRoom() {
+        if (
+            typeof window.openEscapeRoom ===
+            "function"
+        ) {
+            window.openEscapeRoom();
+            return;
+        }
+
+
+        hideAllWebsiteScreens();
+
+        const escapeRoomScreen =
+            document.getElementById(
+                "escape-room-screen"
+            );
+
+        const escapeRoomIntro =
+            document.getElementById(
+                "escape-room-intro"
+            );
+
+        const escapeRoomGame =
+            document.getElementById(
+                "escape-room-game"
+            );
+
+        const escapeRoomFinish =
+            document.getElementById(
+                "escape-room-finish"
+            );
+
+        const finalSurprise =
+            document.getElementById(
+                "final-surprise-placeholder"
+            );
+
+
+        showElement(escapeRoomScreen);
+        showElement(escapeRoomIntro);
+
+        hideElement(escapeRoomGame);
+        hideElement(escapeRoomFinish);
+        hideElement(finalSurprise);
+
+        scrollToTop();
+    }
+
+
+    /* ==================================================== */
+    /* EVENT LISTENERS                                      */
+    /* ==================================================== */
+
+    if (openRewardWheelButton) {
+        openRewardWheelButton.addEventListener(
+            "click",
+            openWheelGame
+        );
+    }
+
+
+    if (spinRewardWheelButton) {
+        spinRewardWheelButton.addEventListener(
+            "click",
+            spinRewardWheel
+        );
+    }
+
+
+    if (spinWheelAgainButton) {
+        spinWheelAgainButton.addEventListener(
+            "click",
+            watchWheelAgain
+        );
+    }
+
+
+    if (rewardWheelNextButton) {
+        rewardWheelNextButton.addEventListener(
+            "click",
+            continueToEscapeRoom
+        );
+    }
+
+
+    if (rewardWheelIntroMenuButton) {
+        rewardWheelIntroMenuButton.addEventListener(
+            "click",
+            returnToMenu
+        );
+    }
+
+
+    if (rewardWheelGameMenuButton) {
+        rewardWheelGameMenuButton.addEventListener(
+            "click",
+            returnToMenu
+        );
+    }
+
+
+    if (rewardWheelResultMenuButton) {
+        rewardWheelResultMenuButton.addEventListener(
+            "click",
+            returnToMenu
+        );
+    }
+
+
+    /* ==================================================== */
+    /* PUBLIC FUNCTION                                      */
+    /* ==================================================== */
+
+    window.openRewardWheel =
+        openRewardWheel;
+
+
+    /* ==================================================== */
+    /* INITIAL STATE                                        */
+    /* ==================================================== */
+
+    showRewardWheelIntro();
+
+})();
